@@ -1,0 +1,54 @@
+<div class="container">
+<table class="table table-bordered" matSort (matSortChange)="sortData($event)">
+    <thead>
+        <tr>
+            <th scope="col">
+               
+            <input [matAutocomplete]="auto" (change)="showSuggestions('name',$event)" (keypress)="showSuggestions('name',$event)" [(ngModel)]="enteredName"/>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="filterData(enteredName)">
+                <mat-option *ngFor="let option of filteredNames"   [(value)]="option.name">
+                  {{option.name}}
+                </mat-option>
+              </mat-autocomplete>
+             </th>
+            <th scope="col">
+                <input [matAutocomplete]="auto2" [(ngModel)]="enteredAddress" (change)="showSuggestions('address',$event)" (keypress)="showSuggestions('address',$event)"/>
+                <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete" (optionSelected)="filterData(enteredAddress)">
+                    <mat-option *ngFor="let option of filteredAddress "   [(value)]="option.newaddress">
+                      {{option.newaddress}}
+                    </mat-option>
+                  </mat-autocomplete></th>
+            <th scope="col">
+                <input [matAutocomplete]="auto3" [(ngModel)]="enteredCompany"  (change)="showSuggestions('company',$event)" (keypress)="showSuggestions('company',$event)"/>
+                <mat-autocomplete autoActiveFirstOption #auto3="matAutocomplete" (optionSelected)="filterData(enteredCompany)">
+                    <mat-option *ngFor="let option of filteredCompanies"   [(value)]="option.company.name">
+                      {{option.company.name}}
+                    </mat-option>
+                  </mat-autocomplete></th>
+            <th scope="col"></th>
+          </tr>
+      <tr>
+        <th scope="col" >Name</th>
+        <th scope="col" mat-sort-header="address">Address</th>
+        <th scope="col">Company</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of empData">
+        <th scope="row">{{data.name}}</th>
+        <td>{{data.newaddress}}</td>
+        <td>{{data.company.name}}</td>
+        <td>
+            <div *ngIf="!deleteStatus">
+            <button type="button" class="btn btn-success" (click)="onEdit(data)"> Edit</button>
+            <button type="button" class="btn btn-danger" (click)="onDelete(data)"> Delete</button>
+            </div>
+            <div *ngIf="deleteStatus">
+                <button type="button" class="btn btn-primary" (click)="onRestore(data)"> Restore</button>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

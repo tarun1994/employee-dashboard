@@ -1,0 +1,15 @@
+.home-bar{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+.employee-header{
+    display:flex;
+    padding: 10px;
+}
+.center-align{
+    text-align: center;
+    flex-grow: 2;
+}
+.m10{
+    margin:10px;
+}

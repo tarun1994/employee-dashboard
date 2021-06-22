@@ -1,0 +1,12 @@
+.modal-header{
+    display:flex;
+    padding: 10px;
+}
+.center-align{
+    text-align: center;
+    flex-grow: 2;
+}
+.dialog-heading{
+    font-size: 18px;
+    font-weight:700;
+}

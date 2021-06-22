@@ -1,0 +1,31 @@
+<div >
+    <div class="modal-header">
+        <div class="dialog-heading center-align">{{data.header}}</div>
+        <mat-icon class="close-icon" (click)="onClose()">close</mat-icon>
+    </div>
+    <div class="modal-body">
+        <mat-form-field style="display:block" appearance="standard">
+            <input matInput type="text" [(ngModel)]="local_data.name" placeholder="Emter Name" />
+        </mat-form-field>
+        <mat-form-field style="display:block" appearance="standard">
+            <input matInput type="text" [(ngModel)]="local_data.street" placeholder="Enter street" /> 
+        </mat-form-field>
+        <mat-form-field style="display:block" appearance="standard">
+            <input matInput type="text" [(ngModel)]="local_data.suite" placeholder="Enter suite" /> 
+        </mat-form-field>
+        <mat-form-field style="display:block" appearance="standard">
+            <input matInput type="text" [(ngModel)]="local_data.city" placeholder="Enter city" /> 
+        </mat-form-field>
+        <mat-form-field style="display:block" appearance="standard">
+            <input matInput type="text" [(ngModel)]="local_data.zipcode" placeholder="Enter zipcode" /> 
+        </mat-form-field>
+        <!-- <mat-label>Input</mat-label> -->
+        <mat-form-field style="display:block" appearance="standard">
+            <input matInput type="text" [(ngModel)]="local_data.company" placeholder="Enter Company Name" />
+        </mat-form-field>
+    </div>
+    <div class="modal-footer">
+        <button type="button" (click)="doAction()">{{action}}</button>
+        <button type="button" (click)="closeDialog()"> Cancel</button>
+    </div>
+</div>
