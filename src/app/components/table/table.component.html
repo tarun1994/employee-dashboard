@@ -4,7 +4,7 @@
         <tr>
             <th scope="col">
                
-            <input [matAutocomplete]="auto" (change)="showSuggestions('name',$event)" (keypress)="showSuggestions('name',$event)" [(ngModel)]="enteredName"/>
+            <input [matAutocomplete]="auto" placeholder="Search by Name" (change)="showSuggestions('name',$event)" (keypress)="showSuggestions('name',$event)" [(ngModel)]="enteredName"/>
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="filterData(enteredName)">
                 <mat-option *ngFor="let option of filteredNames"   [(value)]="option.name">
                   {{option.name}}
@@ -12,14 +12,14 @@
               </mat-autocomplete>
              </th>
             <th scope="col">
-                <input [matAutocomplete]="auto2" [(ngModel)]="enteredAddress" (change)="showSuggestions('address',$event)" (keypress)="showSuggestions('address',$event)"/>
+                <input [matAutocomplete]="auto2" placeholder="Search by Address" [(ngModel)]="enteredAddress" (change)="showSuggestions('address',$event)" (keypress)="showSuggestions('address',$event)"/>
                 <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete" (optionSelected)="filterData(enteredAddress)">
                     <mat-option *ngFor="let option of filteredAddress "   [(value)]="option.newaddress">
                       {{option.newaddress}}
                     </mat-option>
                   </mat-autocomplete></th>
             <th scope="col">
-                <input [matAutocomplete]="auto3" [(ngModel)]="enteredCompany"  (change)="showSuggestions('company',$event)" (keypress)="showSuggestions('company',$event)"/>
+                <input [matAutocomplete]="auto3" placeholder="Search by Company Name" [(ngModel)]="enteredCompany"  (change)="showSuggestions('company',$event)" (keypress)="showSuggestions('company',$event)"/>
                 <mat-autocomplete autoActiveFirstOption #auto3="matAutocomplete" (optionSelected)="filterData(enteredCompany)">
                     <mat-option *ngFor="let option of filteredCompanies"   [(value)]="option.company.name">
                       {{option.company.name}}
