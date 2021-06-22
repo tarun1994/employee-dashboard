@@ -26,9 +26,7 @@ export class TableComponent implements OnInit {
   ngOnChanges() {
     if (this.empData !== undefined) {
       this.storedData = this.empData.slice();
-      console.log("init", this.empData);
     }
-    console.log('changes', this.empData);
   }
 
   onDelete(id: Number): void {
